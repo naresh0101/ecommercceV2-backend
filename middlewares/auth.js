@@ -15,7 +15,6 @@ var apiKeyAuthVerify = async function (req, res, next) {
         {$group: {_id:{ api_key : "$api_key", _id: "$_id" } }}
       ]
     ) 
-    console.log(user);
     if (!user[0]) {
       // No user found means invalid API Key provided
       resBody.message = "Invalid API Key authentication header provided";
